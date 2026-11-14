@@ -19,36 +19,13 @@
   padding: 0.5rem 0.5rem;
   border-top: 1px solid var(--bg-ter);
   border-left: 1px solid var(--bg-ter);
+  width: fit-content;
+  margin: 0 auto;
   @media (min-width: 1024px) {
-    width: 55%;
+    width: 60%;
   }
 }
 
-.heroSwiper,
-.swiper-wrapper,
-.swiper-slide,
-img {
-  max-height: 27rem;
-}
-
-.swiper-slide {
-  display: flex;
-}
-
-.swiper img {
-  object-fit: cover;
-  object-position: 50% 70%;
-  width: 100%;
-}
-
-.swiper-pagination {
-  padding: 0.5rem 0.25rem;
-  background-color: rgba(0, 0, 0, 0.35);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .hero-content {
   display: flex;
@@ -80,3 +57,4 @@ img {
   gap: 1.5rem;
   align-items: flex-start;
 }
+

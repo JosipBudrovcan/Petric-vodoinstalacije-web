@@ -4,7 +4,8 @@ import { Pagination, Autoplay } from "swiper/modules";
 import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/pagination";
-import { imgs } from "../../constants";
+import Slider from "../Slider";
+
 
 
 export default function SectionHero({ ...props }) {
@@ -31,22 +32,7 @@ export default function SectionHero({ ...props }) {
             </div>
           </div>
           <div className="hero-image-wrapper">
-            <Swiper
-              pagination={{
-                dynamicBullets: true,
-              }}
-              autoplay={{
-                delay: 5000,
-              }}
-              modules={[Pagination, Autoplay]}
-              className="heroSwiper"
-            >
-              {imgs.map((element) => (
-                <SwiperSlide>
-                  <img fetchPriority="high" src={element} alt={element + " slika!"}></img>
-                </SwiperSlide>
-              ))}
-            </Swiper>
+            <Slider></Slider>
           </div>
         </div>
       </div>

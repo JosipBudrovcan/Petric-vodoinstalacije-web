@@ -286,4 +286,4 @@ export const faqItems = [
   
   ]
   
-  export const imgs = ["/img1.webp", "/img2.webp", "/img3.webp"];
+  export const imgs = [{src:"/img1.webp", id:0}, {src:"/img2.webp", id:1}, {src:"/img3.webp", id:2}];
