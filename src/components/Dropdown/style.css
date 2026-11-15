@@ -57,6 +57,9 @@
 }
 
 .dropdown a{
-    margin: .5rem;
-    width: 90%
+    
+    width: 90%;
+    @media (min-width: 1024px) {
+        margin: .5rem;
+    }
 }
