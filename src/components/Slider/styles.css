@@ -2,10 +2,12 @@
     overflow: hidden;
     position: relative;
     max-width: 18rem;
+    z-index: 2;
     @media (min-width:1024px) {
         width: 100%;
         max-width: 25rem;
     }
+    
   }
   
   .slider-wrapper{
@@ -25,6 +27,7 @@
 
     max-height: 25rem;
     object-fit: cover;
+    pointer-events: none;
     @media (min-width:1024px) {
         width: 25rem;
         
@@ -34,14 +37,14 @@
   .slider-next, .slider-prev{
     position: absolute;
     top:0%;
-    bottom:0%;
+    bottom:1%;
     background-color: transparent;
-    color:var(--accent);
+    color:var(--text-light);
     transition: all .5s ease;
   }
 
-  .slider button:hover{
-    background-color: rgba(128, 128, 128, .25);
+  .slider .slider-next:hover, .slider .slide-prev:hover{
+    background-color: rgba(0, 0, 0, .25);
   }
 
   .slider svg{

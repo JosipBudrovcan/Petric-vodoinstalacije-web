@@ -6,7 +6,26 @@ import { useEffect, useState, useRef } from "react";
 export default function Slider(){  
     const [index, setIndex] = useState(0)
     const [pause, setPause] = useState(false);
+    const [touchStart, setTouchStart] = useState(null);
+    const [touchEnd, setTouchEnd] = useState(null);
 
+    const onTouchStart = (e) => {
+        setTouchEnd(null) // otherwise the swipe is fired even with usual touch events
+        setTouchStart(e.targetTouches[0].clientX)
+      }
+      
+      const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX)
+      
+      const onTouchEnd = () => {
+        if (!touchStart || !touchEnd) return
+        const distance = touchStart - touchEnd
+        const isLeftSwipe = distance > minSwipeDistance
+        const isRightSwipe = distance < -minSwipeDistance
+        if(isLeftSwipe)
+            setIndex(index+1)
+        if(isRightSwipe)
+            setIndex(index-1)
+      }
     useEffect(() => {
 
         const autoScroll = setInterval(() => {
@@ -16,7 +35,7 @@ export default function Slider(){
          if(pause)
             clearInterval(autoScroll);
 
-         if(index === 3)
+         if(index === imgs.length)
             setIndex(0);
          if(index < 0)
             setIndex(0);
